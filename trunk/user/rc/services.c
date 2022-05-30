@@ -477,6 +477,23 @@ void restart_zerotier(void){
 	stop_zerotier();
 	start_zerotier();
 }
+#endif	
+	
+#if defined(APP_ALDRIVER)
+void stop_aldriver(void){
+	eval("/usr/bin/aliyundrive-webdav.sh","stop");
+}
+
+void start_aldriver(void){
+	int aldriver_enable = nvram_get_int("aliyundrive_enable");
+	if ( aldriver_enable == 1)
+		eval("/usr/bin/aliyundrive-webdav.sh","start");
+}
+
+void restart_aldriver(void){
+	stop_aldriver();
+	start_aldriver();
+}
 #endif
 
 #if defined(APP_ADBYBY)
@@ -860,6 +877,9 @@ stop_services(int stopall)
 #endif
 #if defined(APP_ZEROTIER)
 	stop_zerotier();
+#endif
+#if defined(APP_ALDRIVER)
+	stop_aldriver();
 #endif
 #if defined(APP_ALIDDNS)
 	stop_aliddns();

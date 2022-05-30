@@ -607,11 +607,11 @@ function checkDDNSReturnCode(){
                                             <td>
                                                 <select name="ddns_checkip" class="input" onchange="disable_update();">
                                                     <option value="0" <% nvram_match_x("", "ddns_checkip", "0","selected"); %>><#DDNS_CheckIP_item0#></option>
-                                                    <option value="1" <% nvram_match_x("", "ddns_checkip", "1","selected"); %>>checkip.dyndns.org</option>
-                                                    <option value="2" <% nvram_match_x("", "ddns_checkip", "2","selected"); %>>checkip.dyndns.org:8245</option>
-                                                    <option value="3" <% nvram_match_x("", "ddns_checkip", "3","selected"); %>>echo.tzo.com</option>
-                                                    <option value="4" <% nvram_match_x("", "ddns_checkip", "4","selected"); %>>ip.dnsexit.com</option>
-                                                    <option value="5" <% nvram_match_x("", "ddns_checkip", "5","selected"); %>>ip.changeip.com</option>
+                                                    <option value="1" <% nvram_match_x("", "ddns_checkip", "1","selected"); %>>myip.ipip.net</option>
+                                                    <option value="2" <% nvram_match_x("", "ddns_checkip", "2","selected"); %>>members.3322.net/dyndns/getip</option>
+                                                    <option value="3" <% nvram_match_x("", "ddns_checkip", "3","selected"); %>>ip.3322.net</option>
+                                                    <option value="4" <% nvram_match_x("", "ddns_checkip", "4","selected"); %>>icanhazip.com</option>
+                                                    <option value="5" <% nvram_match_x("", "ddns_checkip", "5","selected"); %>>ddns.oray.com/checkip</option>
                                                     <option value="6" <% nvram_match_x("", "ddns_checkip", "6","selected"); %>>myip.dnsomatic.com</option>
                                                     <option value="7" <% nvram_match_x("", "ddns_checkip", "7","selected"); %>>ip1.dynupdate.no-ip.com</option>
                                                     <option value="8" <% nvram_match_x("", "ddns_checkip", "8","selected"); %>>checkip.dns.he.net</option>

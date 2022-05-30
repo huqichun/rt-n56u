@@ -25,6 +25,10 @@ echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config #集成trojan执行文件，�
 echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config #simple-obfs混淆插件
 ##科学上网##
 
+##阿里云盘##
+echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=y" >> .config
+##阿里云盘##
+
 ##广告管理##
 echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
 echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤

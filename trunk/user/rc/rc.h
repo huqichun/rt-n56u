@@ -581,6 +581,11 @@ void stop_caddy(void);
 void start_caddy(void);
 void restart_caddy(void);
 #endif
+#if defined(APP_ALDRIVER)
+void stop_aldriver(void);
+void start_aldriver(void);
+void restart_aldriver(void);
+#endif
 #if defined(APP_WYY)
 void stop_wyy(void);
 void start_wyy(void);

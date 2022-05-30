@@ -217,6 +217,9 @@ endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_KOOLPROXY),y)
 	rm -f $(INSTALLDIR)/www/Advanced_koolproxy.asp
 endif
+ifneq ($(CONFIG_FIRMWARE_INCLUDE_ALDRIVER),y)
+	rm -f $(INSTALLDIR)/www/Advanced_aliyundrive.asp
+endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_CADDY),y)
 	rm -f $(INSTALLDIR)/www/Advanced_caddy.asp
 endif

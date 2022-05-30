@@ -799,11 +799,27 @@ struct nvram_pair router_defaults[] = {
 	{ "zerotier_nat", "0" },
 	{ "zerotier_secret", "" },
 	{ "zero_staticnum_x", "0" },
-
 	{ "ss_watchcat", "1" },
 	{ "ss_update_chnroute", "0" },
 	{ "ss_update_gfwlist", "0" },
 #endif
+
+#if defined(APP_ALDRIVER)
+	/*阿里云盘*/
+	{ "aliyundrive_enable", "0" },
+	{ "ald_refresh_token", "" },
+	{ "ald_auth_user", "" },
+	{ "ald_auth_password", "" },
+	{ "ald_read_buffer_size", "10485760" },
+	{ "ald_cache_size", "1000" },
+	{ "ald_cache_ttl", "600" },
+	{ "ald_host", "0.0.0.0" },
+	{ "ald_port", "8089" },
+	{ "ald_root", "/" },
+	{ "ald_domain_id", "0" },
+	{ "ald_no_trash", "0" },
+	{ "ald_read_only", "0" },
+#endif	
 
 	/* DHCP server parameters */
 	{ "dhcp_start", DEF_LAN_DHCP_BEG },	/* First assignable DHCP address */

@@ -993,6 +993,25 @@
 	};
 #endif
 
+#if defined(APP_ALDRIVER)
+	struct variable variables_ALDRIVER[] = {
+			{"aliyundrive_enable", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_refresh_token", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_auth_user", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_auth_password", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_read_buffer_size", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_cache_size", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_cache_ttl", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_host", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_port", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_root", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_domain_id", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_no_trash", "", NULL, EVM_RESTART_ALDRIVER},
+			{"ald_read_only", "", NULL, EVM_RESTART_ALDRIVER},
+			{0,0,0,0}
+		};
+#endif
+
 #if defined(APP_SHADOWSOCKS)
 	struct variable variables_ShadowsocksConf[] = {
 			{"ss_enable","",NULL, EVM_RESTART_SHADOWSOCKS},
@@ -1334,6 +1353,9 @@
 #if defined(APP_ADGUARDHOME)
 		{"AdguardHomeConf",		variables_AdguardHomeConf},
 #endif
+#if defined(APP_ALDRIVER)
+		{"ALDRIVER",		variables_ALDRIVER},
+#endif
 #if defined(APP_CADDY)
 		{"CaddyConf",		variables_CaddyConf},
 #endif
@@ -1441,6 +1463,9 @@
 #endif
 #if defined(APP_ADGUARDHOME)
 		{EVM_RESTART_ADGUARDHOME,		EVT_RESTART_ADGUARDHOME,		RCN_RESTART_ADGUARDHOME,	0},
+#endif
+#if defined(APP_ALDRIVER)
+		{EVM_RESTART_ALDRIVER,		EVT_RESTART_ALDRIVER,		RCN_RESTART_ALDRIVER,	0},
 #endif
 #if defined(APP_CADDY)
 		{EVM_RESTART_CADDY,		EVT_RESTART_CADDY,		RCN_RESTART_CADDY,	0},

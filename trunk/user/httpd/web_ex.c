@@ -2318,6 +2318,15 @@ static int zerotier_status_hook(int eid, webs_t wp, int argc, char **argv)
 	return 0;
 }
 #endif
+	
+#if defined (APP_ALDRIVER)
+static int aliyundrive_status_hook(int eid, webs_t wp, int argc, char **argv)
+{
+	int aliyundrive_status_code = pids("aliyundrive-webdav");
+	websWrite(wp, "function aliyundrive_status() { return %d;}\n", aliyundrive_status_code);
+	return 0;
+}
+#endif
 
 #if defined (APP_FRP)
 static int frpc_status_hook(int eid, webs_t wp, int argc, char **argv)
@@ -2553,6 +2562,11 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 #else
 	int found_app_zerotier = 0;
 #endif
+#if defined(APP_ALDRIVER)
+	int found_app_aldriver = 1;
+#else
+	int found_app_aldriver = 0;
+#endif
 #if defined(APP_ADBYBY)
 	int found_app_adbyby = 1;
 #else
@@ -2756,6 +2770,7 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		"function found_app_frp() { return %d;}\n"
 		"function found_app_wyy() { return %d;}\n"
 		"function found_app_zerotier() { return %d;}\n"
+		"function found_app_aldriver() { return %d;}\n"
 		"function found_app_aliddns() { return %d;}\n"
 		"function found_app_xupnpd() { return %d;}\n"
 		"function found_app_mentohust() { return %d;}\n",
@@ -2787,6 +2802,7 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		found_app_frp,
 		found_app_wyy,
 		found_app_zerotier,
+		found_app_aldriver,
 		found_app_aliddns,
 		found_app_xupnpd,
 		found_app_mentohust
@@ -4554,6 +4570,9 @@ struct ej_handler ej_handlers[] =
 #endif
 #if defined(APP_DNSFORWARDER)
 	{ "dnsforwarder_status", dnsforwarder_status_hook},
+#endif
+#if defined (APP_ALDRIVER)
+	{ "aliyundrive_status", aliyundrive_status_hook},
 #endif
 #if defined(APP_CADDY)
 	{ "caddy_status", caddy_status_hook},
